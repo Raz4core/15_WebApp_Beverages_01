@@ -18,7 +18,9 @@ function controller() {
 
 //4.Modul Eingabe
 function getInput() {
-    return parseInt("18");
+    const field = document.getElementsByName("eingabe")[0];
+    output(field);
+    return parseInt(field.value);
 }
 
 
