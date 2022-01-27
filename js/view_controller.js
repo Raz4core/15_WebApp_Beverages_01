@@ -11,12 +11,19 @@
 
 /***  Ablaufsteuerung | Control */  
 
-/
+
 
 /*** View-Schicht aktualisieren */ 
-
-/
-
+//1.Modul: Bild aktualisieren I Test:
+output(updateImg("cola"));
+// output(updateImg("milch"));
+// output(updateImg("wein"));
+function updateImg(imgName) {
+    const img = document.getElementById("bevImg");
+    img.src = "./bilder/cola.jpg";
+    // output(img.src);
+    return imgName;
+}
 
 
 
