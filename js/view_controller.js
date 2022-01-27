@@ -38,15 +38,14 @@ field.addEventListener("input",isInputValid);
 // 4c. Check auf korrekte Eingabe...
 function isInputValid() {
 
-    let inputStr = field.value;
-    let cond = false; //???
+    let inputStr   = field.value;
+    const patt     = /^[0-9]{1,3}$/g;
+    let cond       = patt.test(inputStr);
 
     if (!cond) {
         field.value = "";
         updateImg(data.default.bev);
     }
-
-    output(inputStr);
     return true;
 }
 
