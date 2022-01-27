@@ -22,7 +22,11 @@ btn.addEventListener("click" ,actOnClick);
 
 //5b. Event-Dispatcher
 function actOnClick() {
-    controller();
+    if (isInputValid()) {
+        controller(); 
+    } else {
+        output("input nicht korrekt!")
+    }
 }
 //4.Definition : Eingabefeld
 const field = document.getElementsByName("eingabe")[0];
@@ -46,7 +50,7 @@ function isInputValid() {
         field.value = "";
         updateImg(data.default.bev);
     }
-    return true;
+    return cond;
 }
 
 
