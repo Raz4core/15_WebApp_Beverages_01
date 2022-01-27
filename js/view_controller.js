@@ -16,8 +16,10 @@ function controller() {
     output(updateImg(checkAge(10)))
 }
 
-//4.Modul Input
-
+//4.Modul Eingabe
+function getInput() {
+    return parseInt("18");
+}
 
 
 /**Business-Logic */
