@@ -13,24 +13,43 @@
 //5.Modul Ablaufsteuerung 
 // controller()
 function controller() {
-    output(updateImg(checkAge(10)))
+    output(updateImg(checkAge(getInput())))
 }
 
 //5a. Trigger - BtnClick
-const btn = document.getElementsById("trigBtn");
-btn.addEventlistener("click",actOnClick);
+const btn = document.getElementById("trigBtn");
+btn.addEventListener("click" ,actOnClick);
 
 //5b. Event-Dispatcher
 function actOnClick() {
     controller();
 }
+//4.Definition : Eingabefeld
+const field = document.getElementsByName("eingabe")[0];
 
-//4.Modul Eingabe
+//4a.Modul Eingabe
 function getInput() {
-    const field = document.getElementsByName("eingabe")[0];
-    output(field);
     return parseInt(field.value);
 }
+
+// 4b. Trigger-Input
+field.addEventListener("input",isInputValid);
+
+// 4c. Check auf korrekte Eingabe...
+function isInputValid() {
+
+    let inputStr = field.value;
+    let cond = false; //???
+
+    if (!cond) {
+        field.value = "";
+        updateImg(data.default.bev);
+    }
+
+    output(inputStr);
+    return true;
+}
+
 
 
 /**Business-Logic */
@@ -44,7 +63,7 @@ function getInput() {
 function checkAge(age) {
     switch (true) {
         case (age >= data.milk.lower) && (age <= data.milk.upper) :
-            return data.milch.bev;           
+            return data.milk.bev;           
         case (age >= data.juice.lower) && (age <= data.juice.upper):
             return data.juice.bev;
         case (age >= data.cola.lower) && (age <= data.cola.upper):
