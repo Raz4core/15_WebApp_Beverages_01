@@ -16,6 +16,10 @@ function controller() {
     output(updateImg(checkAge(10)))
 }
 
+//4.Modul Input
+
+
+
 /**Business-Logic */
 //3.Modul: Buisness-Logic (Mapping)
 // output(checkAge(2));
@@ -38,7 +42,6 @@ function checkAge(age) {
             return "tee";
     }
 }
-
 
 /*** View-Schicht aktualisieren */ 
 //2.Modul: Bild aktualisieren I Test:
