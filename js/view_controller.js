@@ -11,9 +11,18 @@
 
 /***  Ablaufsteuerung | Control */  
 //5.Modul Ablaufsteuerung 
-controller()
+// controller()
 function controller() {
     output(updateImg(checkAge(10)))
+}
+
+//5a. Trigger - BtnClick
+const btn = document.getElementsById("trigBtn");
+btn.addEventlistener("click",actOnClick);
+
+//5b. Event-Dispatcher
+function actOnClick() {
+    controller();
 }
 
 //4.Modul Eingabe
